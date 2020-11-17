@@ -164,6 +164,29 @@ def actionDiv():
     else:
         messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
 
+#Trigonometric Functions
+# Cosine Function
+def action_cos():                                                          
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'Division');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    ans = "0"
+
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+
+    num1 = Numberentry1.get();
+    if(is_number(num1)==True):
+        num1 = casting(num1);
+        ans = str(np.cos(num1))
+
 root = Tk();
 root.title('Python Calculator');
 root.geometry('380x300+200+250');
