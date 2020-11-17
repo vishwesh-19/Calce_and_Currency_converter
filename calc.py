@@ -163,6 +163,48 @@ def actionDiv():
         Showlabel.place(relx=0.5, rely=0.6, anchor='center')
     else:
         messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
+
+# Factorial Function
+def factorial(n):
+    if(n==0):
+        return(1)
+    elif(n>=1):
+        return(n*factorial(n-1))
+    else:
+        return("Error")
+    
+def action_fact():
+     Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+  
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'Division');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    ans = "0"
+
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+
+    num1 = Numberentry1.get();
+    if(is_number(num1)==True and is_number(num2)==True):
+        num1 = casting(num1)
+        ans = str(factorial(num1))
+        Showtemplabel.delete(0, END);
+        Showlabel.delete(0, END)
+
+        Showtemplabel.config(fg='yellow', bg='#8dad96')
+        Showtemplabel.insert(0, 'Division');
+        Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+        Showlabel.insert(0, ans);
+        Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+    else:
+        messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
+
 #Trigonometric Functions
 #Cosine
 def action_cos():
@@ -452,6 +494,12 @@ mulbutton.place(relx=0.5, rely=0.7)
 
 divbutton = Button(root, text="/", width = 5, command = actionDiv);
 divbutton.place(relx=0.7, rely=0.7)
+
+percentbutton = Button(root, text="/", width = 5, command = actionDiv);
+percentbutton.place(relx=0.9, rely=0.3)
+
+fact_button =  Button(root, text="/", width = 5, command = actionDiv);
+fact_button.place(relx=0.9, rely=0.5)
 
 authorbutton = Button(root, text='Author', width=6, command = actionauthor);
 authorbutton.place(relx = 0.5, rely=0.95, anchor='center');
