@@ -463,7 +463,7 @@ def action_pi():
     
 # Floor Function
 def action_floor:
-     Showtemplabel.delete(0, END);
+    Showtemplabel.delete(0, END);
     Showlabel.delete(0, END)
   
     Showtemplabel.config(fg='yellow', bg='#8dad96')
@@ -492,7 +492,97 @@ def action_floor:
         messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
     
 #Ceil Function
-def
+def action_ceil():
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+  
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'antilog');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    ans = "0"
+
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+
+    num1 = Numberentry1.get();
+    if(is_number(num1)==True):
+        num1 = casting(num1)
+        ans = str(math.ceil(num1))
+        Showtemplabel.delete(0, END);
+        Showlabel.delete(0, END)
+
+        Showtemplabel.config(fg='yellow', bg='#8dad96')
+        Showtemplabel.insert(0, 'Division');
+        Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+        Showlabel.insert(0, ans);
+        Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+    else:
+        messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
+
+# Factorial Function
+def factorial(n):
+    if(n==0):
+        return(1)
+    elif(n>=1):
+        return(n*factorial(n-1))
+    else:
+        messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
+
+def action_fact():
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+  
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'antilog');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    ans = "0"
+
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+
+    num1 = Numberentry1.get();
+    if(is_number(num1)==True):
+        num1 = casting(num1)
+        ans = str(math.ceil(num1))
+        Showtemplabel.delete(0, END);
+        Showlabel.delete(0, END)
+
+        Showtemplabel.config(fg='yellow', bg='#8dad96')
+        Showtemplabel.insert(0, 'Division');
+        Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+        Showlabel.insert(0, ans);
+        Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+    else:
+        messagebox.showerror("Error", "Enter a Valid number\ne.g. 123, 0.123, .123, -0.123, 123.456")
+# i Function
+def action_i:
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'Division');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    ans = "0"
+    i = complex(0,1)
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+    ans = i
+    Showtemplabel.delete(0, END);
+    Showlabel.delete(0, END)
+
+    Showtemplabel.config(fg='yellow', bg='#8dad96')
+    Showtemplabel.insert(0, 'Division');
+    Showtemplabel.place(relx=0.5, rely=0.5, anchor='center')
+
+    Showlabel.insert(0, ans);
+    Showlabel.place(relx=0.5, rely=0.6, anchor='center')
+    
+# Main Window
 root = Tk()
 root.title('Python Calculator')
 root.geometry('380x300+200+250')
@@ -505,6 +595,7 @@ Numberentry2 = Entry(root);
 Numberentry1.place(relx=0.5, rely=0.3, anchor='center')
 Numberentry2.place(relx=0.5, rely=0.4, anchor='center')
 
+# Buttons for Mathematic operations(+,-,x,/,%)
 plusbutton = Button(root, text="+", width = 5, command = actionPlus);
 plusbutton.place(relx=0.1, rely=0.7)
 
@@ -520,8 +611,28 @@ divbutton.place(relx=0.7, rely=0.7)
 authorbutton = Button(root, text='Author', width=6, command = actionauthor);
 authorbutton.place(relx = 0.5, rely=0.95, anchor='center');
 
-percent_button = Button(root, text="%", width = 5, command = action_percent)
+percent_button = Button(root, text="%", width = 5, command = action_percent);
 percent_button.place(relx=0.9, rely=0.7)
+
+# Buttons for Trigonometic Operations(cos,sin,tan)
+cos_button = Button(root, text="%", width = 5, command = action_cos);
+cos_button.place(relx = 0.9, rely = 0.9)     
+
+sin_button = Button(root, text="%", width = 5, command = action_cos);
+sin_button.place(relx = 0.9, rely = 1.1)    
+
+tan_button = Button(root, text="%", width = 5, command = action_cos);
+tan_button.place(relx = 0.9, rely = 1.3)
+
+# Buttons for Trigonometic Operations(acos,asin,atan)
+acos_button = Button(root, text="%", width = 5, command = action_cos);
+acos_button.place(relx = 1.1, rely = 0.1
+
+atan_button = Button(root, text="%", width = 5, command = action_cos);
+atan_button.place(relx = 1.1, rely = 0.3)
+
+asin_button = Button(root, text="%", width = 5, command = action_cos);
+asin_button.place(relx = 1.1, rely = 0.5)
 
 root.resizable(False, False);
 root.mainloop();
